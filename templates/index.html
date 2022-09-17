@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-    <title>FlaskBlog</title>
-</head>
-
-<body>
-    <h1>Welcome to FlaskBlog</h1>
-</body>
-
-</html>
+{% block content %}
+<h1>{% block title %} ILAN Learning {% endblock %}</h1>
+{% for post in posts %}
+<a href="#">
+    <h2>{{ post['title'] }}</h2>
+</a>
+<span class="badge badge-primary">{{ post['created'] }}</span>
+<hr>
+{% endfor %}
+{% endblock %}
