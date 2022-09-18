@@ -16,10 +16,10 @@ app.config['SECRET_KEY'] = 'your secret key'
 
 @app.route('/')
 def index():
-    conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts').fetchall()
-    conn.close()
-    return render_template('index.html', posts=posts)
+    # conn = get_db_connection()
+    # posts = conn.execute('SELECT * FROM posts').fetchall()
+    # conn.close()
+    return render_template('feed.html')
 
 
 @app.route('/main')
@@ -41,10 +41,10 @@ def message():
 def login():
     return render_template('login.html')
 
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
-
 
 
 @app.route('/create', methods=('GET', 'POST'))

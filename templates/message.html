@@ -3,19 +3,19 @@
 {% block content %}
 <!-- <h1>{% block title %}hello {% endblock %}</h1> -->
 
-<div class="chat-popup" id="myForm" style="background-color:ghostwhite; padding: 20px; ">
+<div class="chat-popup" id="myForm" style="background-color:ghostwhite; height: 90%; padding: 20px; ">
     <form action="" class="form-container">
         <h1>Chat</h1>
 
         <!-- <label for="msg"><b>Message</b></label> -->
         <p></p>
-        <p style="background-color:cornflowerblue; width: 40%; color: white; padding: 10px; border-radius: 10px">
-            <label id="prompt">Click next to reveal the first prompt</label>
+        <p style="background-color:powderblue; width: 40%; color: white; padding: 10px; border-radius: 10px">
+            <label id="prompt" style="color: black">Click next to reveal the first prompt</label>
             <button onclick="newPrompt()" type="button" class="btn btn-warning float-right">Next</button>
 
         </p>
         <textarea style="height: 50%; width: 100%; border:none; background-color: ghostwhite" disabled></textarea>
-        <textarea placeholder="Type message..." name="msg" style="width: 100%; border:none;"></textarea>
+        <textarea placeholder="Type message..." name="msg" style="width: 100%; border:none; "></textarea>
 
         <button type="submit" class="btn btn-primary float-right" style="margin-top: 10px">Send</button>
     </form>
@@ -60,12 +60,10 @@
         var text = document.getElementById("prompt").value = prompts[Math.floor(Math.random() * prompts.length)];
         document.getElementById('prompt').innerHTML = text;
         console.log(document.getElementById("prompt").value);
-        //return ('hello');
-        // for(let i = 0; i < prompts.length; i++) {
-        // }
-        //console.log(prompts[Math.floor(Math.random() * prompts.length)]);
-
     }
+
+    document.getElementById('message').innerHTML = "Back";
+    document.getElementById('message').href = "/";
 </script>
 
 

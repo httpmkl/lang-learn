@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %}
 
 {% block content %}
 <h1>{% block title %} ILAN Learning {% endblock %}</h1>
@@ -7,4 +7,66 @@
 <span class="badge badge-primary">{{ post['content'] }}</span>
 <hr>
 {% endfor %}
+{% endblock %} -->
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background-color: white; margin-top: 15%">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="infoPopup"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mary Chen </h5> <br>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>[Intermediate French]</p>
+                    <p>Mary is an avid learner of french in her free time. She was heavily involved in the French
+                        Immersion program and french speaking clubs in University.</p>
+                    <span class="fa fa-star" style="color:orange"></span>
+                    <span class="fa fa-star" style="color:orange"></span>
+                    <span class="fa fa-star" style="color:orange"></span>
+                    <span class="fa fa-star" style="color:orange"></span>
+                    <span class="fa fa-star"></span>
+                    <p>15 ratings</p>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- <button onclick="test()" type=" button" class="btn btn-outline-info">Message</button> -->
+                    <a href="message" class="btn btn-outline-info" role="button">Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 style="margin-left: 7%">Chat with a friend...</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm align-middle" style="text-align:center">
+                <img src="../static/1.png" data-toggle="modal" data-target="#exampleModalCenter" style="width: 100%">
+                <h5>Mary Chen</h5>
+                <h6>French</h6>
+            </div>
+            <div class="col-sm" style="text-align:center">
+                <img src="../static/2.png" data-toggle="modal" data-target="#exampleModalCenter" style="width: 100%">
+                <h5>Eric Meta</h5>
+                <h6>English</h6>
+            </div>
+            <div class="col-sm" style="text-align:center">
+                <img src="../static/5.png" data-toggle="modal" data-target="#exampleModalCenter" style="width: 100%">
+                <h5>Emily Beaumont</h5>
+                <h6>Spanish</h6>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- <script src="{{url_for('static', filename='../static/script.js')}}"></script> -->
 {% endblock %}
