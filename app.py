@@ -32,6 +32,16 @@ def message():
     return render_template('message.html')
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+
+
 @app.route('/create', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
