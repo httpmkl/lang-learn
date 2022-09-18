@@ -1,3 +1,3 @@
-# lang-learn
+# Lanex 
 
 intermediate language learning app test
