@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <h1>{% block title %}hello {% endblock %}</h1> -->
+
+<div class="chat-popup" id="myForm" style="background-color:ghostwhite; padding: 20px; ">
+    <form action="" class="form-container">
+        <h1>Chat</h1>
+
+        <label for="msg"><b>Message</b></label>
+        <p></p>
+        <p style="background-color:cornflowerblue; width: 50%; color: white; padding: 10px; border-radius: 10px">test
+            <button onclick="nextPrompt()" class="btn btn-primary float-right">Next</button>
+        </p>
+        <textarea style="height: 100%; width: 100%; border:none; background-color: ghostwhite"></textarea>
+        <textarea placeholder="Type message.." name="msg" style="width: 100%; border:none;"></textarea>
+
+        <button type="submit" class="btn btn-primary" style="">Send</button>
+    </form>
+</div>
+
+<script src="{{url_for('static', filename='../static/script.js')}}"></script>
+
+
+{% endblock %}
