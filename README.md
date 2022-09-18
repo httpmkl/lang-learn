@@ -1,3 +1,3 @@
 # Lanex 
 
-intermediate language learning app test
+An intermediate language exchange app

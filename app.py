@@ -19,7 +19,7 @@ def index():
     # conn = get_db_connection()
     # posts = conn.execute('SELECT * FROM posts').fetchall()
     # conn.close()
-    return render_template('feed.html')
+    return render_template('login.html')
 
 
 @app.route('/main')
