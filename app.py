@@ -22,6 +22,11 @@ def index():
     return render_template('index.html', posts=posts)
 
 
+@app.route('/main')
+def main():
+    return render_template('main.html')
+
+
 @app.route('/feed')
 def about():
     return render_template('feed.html')

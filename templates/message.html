@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} -->
 
 {% block content %}
 <!-- <h1>{% block title %}hello {% endblock %}</h1> -->
@@ -7,19 +7,66 @@
     <form action="" class="form-container">
         <h1>Chat</h1>
 
-        <label for="msg"><b>Message</b></label>
+        <!-- <label for="msg"><b>Message</b></label> -->
         <p></p>
-        <p style="background-color:cornflowerblue; width: 50%; color: white; padding: 10px; border-radius: 10px">test
-            <button onclick="nextPrompt()" class="btn btn-primary float-right">Next</button>
-        </p>
-        <textarea style="height: 100%; width: 100%; border:none; background-color: ghostwhite"></textarea>
-        <textarea placeholder="Type message.." name="msg" style="width: 100%; border:none;"></textarea>
+        <p style="background-color:cornflowerblue; width: 40%; color: white; padding: 10px; border-radius: 10px">
+            <label id="prompt">Click next to reveal the first prompt</label>
+            <button onclick="newPrompt()" type="button" class="btn btn-warning float-right">Next</button>
 
-        <button type="submit" class="btn btn-primary" style="">Send</button>
+        </p>
+        <textarea style="height: 50%; width: 100%; border:none; background-color: ghostwhite" disabled></textarea>
+        <textarea placeholder="Type message..." name="msg" style="width: 100%; border:none;"></textarea>
+
+        <button type="submit" class="btn btn-primary float-right" style="margin-top: 10px">Send</button>
     </form>
 </div>
 
-<script src="{{url_for('static', filename='../static/script.js')}}"></script>
+<!-- <script src="{{url_for('static', filename='../static/script.js')}}"></script> -->
+
+<script>
+    const prompts = [`
+    Vous êtes dans un café où vous rencontrez le barista. 
+    Pour commander, vous devez passer votre commande. 
+    Le barista entamera une conversation.
+    \n---------------------------------------------------------\n\n
+    You are at a coffee shop where you encounter the barista. 
+    To order, you need to place your order.
+    The barista will start a conversation.
+
+    `,
+        `
+    Vous êtes au cabinet d'un médecin, vous avez pris un rendez-vous mais il est en retard.
+    Vous voulez vous assurer que le rendez-vous est toujours sur la bonne voie.
+    \n---------------------------------------------------------\n
+    You are at a doctor's office, you have booked an appointment but it's running late.
+    You want to make sure that the appointment is still on track.
+    `,
+        `
+    Vous êtes à l'épicerie mais vous ne trouvez pas ce que vous cherchez et vous êtes pressé.
+    Vous trouvez un greffier et commencez à lui poser des questions.
+    \n---------------------------------------------------------\n
+    You are at the grocery store but you cannot find what you are looking for and you are in a rush. 
+    You find a clerk and begin to ask them questions.
+
+    `,
+        `
+    Vous souhaitez effectuer un retour en ligne sur Amazon, vous essayez donc de discuter en ligne avec l'employé
+    \n---------------------------------------------------------\n
+    You want to make a return online on Amazon, so you are trying to chat with the employee online
+
+    `];
+
+    function newPrompt() {
+        var text = document.getElementById("prompt").value = prompts[Math.floor(Math.random() * prompts.length)];
+        document.getElementById('prompt').innerHTML = text;
+        console.log(document.getElementById("prompt").value);
+        //return ('hello');
+        // for(let i = 0; i < prompts.length; i++) {
+        // }
+        //console.log(prompts[Math.floor(Math.random() * prompts.length)]);
+
+    }
+</script>
 
 
 {% endblock %}
